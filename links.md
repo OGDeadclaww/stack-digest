@@ -1,0 +1,19 @@
+# Useful Links
+_worth a bookmark — pulled from open browser tabs, not newsletter-sourced_
+_Manually reviewed and kept only when genuinely useful — not just "looked interesting." Dated by when they were saved, not published._
+
+> Entries older than 60 days live in `archive/links-YYYY-MM.md`. Coding agents should read only this file (plus `universal.md` if this is not already Universal).
+
+### 2026-09-04 — Chrome tabs
+- **Tool:** CodeRabbit — AI-first pull request reviewer for GitHub/GitLab: context-aware line-by-line feedback, PR triage scoring, and continuous security scanning. Used by 17,000+ teams across 6M+ repos. [coderabbit.ai](https://www.coderabbit.ai/)
+- **Tool:** ccusage — CLI that analyzes token usage and cost from local data across Claude Code, Copilot, Codex and other coding-agent CLIs; daily/weekly/monthly cost breakdowns. 18k+ GitHub stars. [github.com/ccusage/ccusage](https://github.com/ccusage/ccusage)
+- **Tool:** Agiloop — free codebase health scan for bugs, technical debt, security risks and scalability issues; read-only (doesn't modify code), returns prioritized recommendations. [agiloop.ai](https://www.agiloop.ai/)
+- **Tool:** Superhuman AI Tools Directory — curated database of 300+ AI tools across 12 categories (productivity, marketing, video, finance, and more). [superhuman.ai](https://www.superhuman.ai/aitoolsdirectory)
+- **Tool:** Claude Prompt Library — 1,000+ ready-to-use Claude prompts organized by task/category; leans toward everyday office work (email, planning, admin) rather than coding specifically. [claudeprompts.netlify.app](https://claudeprompts.netlify.app/)
+- **Tool:** 100 CLI Tools — curated directory of 100+ command-line tools spanning git, search, containers, cloud, databases and AI tooling, aimed at cutting time spent on terminal chores. [100-cli-tools.netlify.app](https://100-cli-tools.netlify.app/)
+- **Tool:** 100 Pro Hacks for Claude Code — 100+ tips across 5 parts: Fundamentals, CLAUDE.md deep dive, Advanced features (Skills/Subagents/MCP), shortcuts, and a 40+ tips collection. [claude-code-hacks.lovable.app](https://claude-code-hacks.lovable.app/)
+- **Tool:** The Code — Developer Resources hub: an index of curated dev guides — CLI tools, Claude Code hacks, a Claude Agent SDK course, LLM/AI-agent project collections, code-review-tool selection guide, and more. [learn-code-tiles.lovable.app](https://learn-code-tiles.lovable.app/)
+- **Tool:** Top 10 YouTube channels to learn AI (from a Superhuman AI cheat-sheet PDF): Two Minute Papers, AI Explained, All About AI, AssemblyAI, Matt Wolfe, nang, Analytics Vidhya, sentdex, Data School, PromptJungle.
+- **Tool:** 9 free generative-AI courses on Google Cloud Skills Boost: Introduction to Generative AI, Introduction to Image Generation, Introduction to Large Language Models, Encoder-Decoder Architecture, Transformer Models and BERT Model, Create Image Captioning Models, Introduction to Responsible AI, Introduction to Generative AI Studio, Attention Mechanism. [cloudskillsboost.google](https://www.cloudskillsboost.google/)
+- **Tool:** 6 free AI courses on NVIDIA's Deep Learning Institute: Generative AI Explained, Augment your LLM Using Retrieval Augmented Generation, Building a Brain in 10 Minutes, Introduction to AI in the Data Center, Introduction to Networking, Accelerate Data Science Workflows With Zero Code Changes. [nvidia.com/training](https://www.nvidia.com/en-us/training/)
+- **Tool:** 6 free AI courses on LinkedIn Learning: Introduction to Artificial Intelligence, Introduction to Generative AI with GPT, How to Boost Your Productivity with AI Tools, Introduction to Large Language Models, Artificial Intelligence for Business Leaders, Artificial Intelligence Foundations: Machine Learning. [linkedin.com/learning](https://www.linkedin.com/learning/)
