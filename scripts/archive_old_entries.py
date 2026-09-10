@@ -81,9 +81,10 @@ def main():
             new_content = "".join(block_texts)
             if arch_path.exists():
                 old = arch_path.read_text(encoding="utf-8")
-                # keep newest-first within the month file
-                sep = "\n" if not old.endswith("\n\n") else ""
-                arch_path.write_text(new_content + sep + old, encoding="utf-8")
+                title_line, _, rest = old.partition("\n")
+                # keep newest-first within the month file, title line always on top
+                sep = "\n" if not rest.startswith("\n\n") else ""
+                arch_path.write_text(title_line + "\n\n" + new_content + sep + rest.lstrip("\n"), encoding="utf-8")
             else:
                 title = section.capitalize() if section != "javascript" else "JS / Frontend"
                 arch_path.write_text(f"# {title} — archive ({key})\n\n{new_content}", encoding="utf-8")

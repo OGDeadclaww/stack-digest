@@ -46,12 +46,24 @@ def split_into_blocks(text):
     return blocks
 
 
-def existing_keys(live_text):
+def existing_keys(text):
     keys = set()
-    for line in live_text.splitlines():
+    for line in text.splitlines():
         m = HEADER_RE.match(line.strip())
         if m:
             keys.add((m.group(1), m.group(2)))
+    return keys
+
+
+def archived_keys(target):
+    """Keys already moved to archive/<section>-YYYY-MM.md for this section."""
+    section = target.stem
+    archive_dir = target.parent / "archive"
+    keys = set()
+    if not archive_dir.is_dir():
+        return keys
+    for arch_path in archive_dir.glob(f"{section}-*.md"):
+        keys |= existing_keys(arch_path.read_text(encoding="utf-8"))
     return keys
 
 
@@ -68,7 +80,7 @@ def main():
         return
 
     live_text = target.read_text(encoding="utf-8") if target.exists() else ""
-    already = existing_keys(live_text)
+    already = existing_keys(live_text) | archived_keys(target)
 
     to_insert = []
     skipped = []
