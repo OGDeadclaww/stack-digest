@@ -3,6 +3,10 @@ _read only if the project is JS/TS or frontend_
 
 > Entries older than 60 days live in `archive/javascript-YYYY-MM.md`. Coding agents should read only this file (plus `universal.md` if this is not already Universal).
 
+### 2026-09-09 — The Code
+- **Lesson:** Three ways to build agent-generated UIs (CopilotKit's Tyler Slaton): let agents create dynamic frontends, handle user input, and power interactive workflows like incident-triage apps, instead of only returning text. [tutorial](https://www.youtube.com/watch?v=mGyyTVk8Ggw)
+
+
 ### 2026-09-04 — Sloth Bytes
 - **Lesson:** Chrome removed all remaining Manifest V2 extensions from the Web Store (uBlock Origin included) — already-installed copies on Chrome 138 or earlier keep working with no updates and can't be reinstalled. Alternatives: uBO Lite, Brave (which self-hosts uBlock Origin/AdGuard/uMatrix/NoScript), or Firefox. [developer.chrome.com](https://developer.chrome.com/docs/extensions/develop/migrate/mv2-deprecation-timeline)
 - **Tool:** htmx 4.0 — switched internally from XMLHttpRequest to `fetch()`. Breaking for you: attribute inheritance (e.g. `hx-confirm`) is now opt-in via `:inherited`; events renamed (`htmx:beforeRequest` → `htmx:before:request`); history no longer uses localStorage, so the back button re-fetches instead of restoring a stale DOM. npm `latest` stays on 2.x until early 2027; run `npx htmx.org@4.0.0 upgrade-check` before pinning 4.0.0. [four.htmx.org](https://four.htmx.org/announcements/2026-08-28-htmx-4.0.0-is-released)

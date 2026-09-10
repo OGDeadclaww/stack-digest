@@ -3,6 +3,45 @@ _applies regardless of language — read no matter what you're building_
 
 > Entries older than 60 days live in `archive/universal-YYYY-MM.md`. Coding agents should read only this file (plus `universal.md` if this is not already Universal).
 
+### 2026-09-09 — The Code
+- **Lesson:** Uber cut agent costs while traffic grew 9.4x by treating the AI bill as an engineering problem, not a budget cap: route every job through one harness to whichever model balances cost and quality, hand simpler subtasks to cheaper subagents (the single biggest saver), and cut tokens per query over 50% with hour-long context caches plus "code-mode" (bundling many tool calls into one script). [uber.com/blog](https://www.uber.com/us/en/blog/efficient-software-factory/)
+- **Tool:** Diagram Design — turns a codebase, database schema, or architecture into instant diagrams; gives Claude Code, Codex, and other agents 39 professional styles (flowcharts to user journeys) matched to your brand's colors/fonts (35.4k★). [github.com/cathrynlavery/diagram-design](https://github.com/cathrynlavery/diagram-design)
+- **Lesson:** Anthropic's guide to cutting Claude API spend without hurting performance: better prompt caching, cleaner instructions, and smarter effort settings, plus tools like `prompt-audit` and `cost-optimize` that catch wasteful prompts and test cheaper configs before you ship them. [cookbook](https://archive.codenewsletter.ai/2097369738968195513)
+- **Lesson:** Give a Codex `/goal` run a plain-English usage budget so long overnight runs don't drain the week's quota: start the goal with GPT-6 Astra selected and add a line like "You can see my remaining weekly usage %. Keep working until it drops to 25%, then stop." Astra checks its remaining usage as it works and stops at the floor instead of burning the whole week. [details](https://archive.codenewsletter.ai/2097021813696114813)
+
+
+### 2026-09-09 — Sloth Bytes
+- **Lesson:** Git worktrees check out multiple branches into separate folders backed by one shared repo — ideal for running parallel coding agents without them clobbering each other's working files. Create one with `git fetch origin && git worktree add --no-track -b fix/login ../repo-login origin/main`; remove when done with `git worktree remove ../repo-login` (the branch survives — delete it separately with `git branch -d fix/login`); recover from a manually-deleted folder with `git worktree prune`. Give each worktree its own port/database and don't share `node_modules` across them, and remember a worktree isn't a sandbox — an agent there can still read neighboring folders/credentials, so use real sandboxing to restrict what it can touch. [git-scm.com/docs/git-worktree](https://git-scm.com/docs/git-worktree)
+
+
+### 2026-09-08 — The Code
+- **Lesson:** A viral YC talk argues the biggest AI upgrade might be the harness — the scaffolding connecting a model to tools/memory/integrations — rather than the model itself; improving that layer alone reportedly pushed reasoning scores higher than upgrading the model, and some harnesses can even rewrite their own code. Even Uncle Bob Martin admits he may be over-constraining his own agents. [talk](https://archive.codenewsletter.ai/2096984134715392265)
+- **Lesson:** Spotify engineers cut Claude Code token usage by ~90% with a two-model routing setup — full breakdown of the approach. [breakdown](https://archive.codenewsletter.ai/2096439998539321653)
+- **Lesson:** Old agent instructions can actively hurt GPT-6 Astra — a guide on which skills/AGENTS.md rules to delete first before adapting existing prompts to a newer model. [guide](https://archive.codenewsletter.ai/2095991462416490862)
+- **Lesson:** Claude Code writes bloated PR descriptions by default — an OpenCode engineer's fix: save a `writing-pr` skill (`mkdir -p ~/.claude/skills/writing-pr`) whose SKILL.md bans essay-length bodies and "I ran tests" filler, requires bullet points/code snippets/Mermaid diagrams, before/after tables for visual changes and benchmarks, and skips intermediate-commit detail in favor of only the final squash commit. Also works team-wide from a repo's own `.claude/skills/`. [details](https://archive.codenewsletter.ai/2096769160021979571)
+- **Tool:** Dify — open-source platform (155k★) for building AI agents, RAG pipelines, and multi-step workflows with visual workflow building, broad model/tool support, and cloud hosting. [github.com/langgenius/dify](https://github.com/langgenius/dify)
+- **Tool:** OpenAI's GPT-6 Astra cookbook — best practices, new features (including async tool calling that lets Astra keep working while other tools are still running), and migration advice for updating agent instructions/workflows to the new model. [cookbook](https://developers.openai.com/api/docs/guides/latest-model?model=gpt-6-astra)
+
+
+### 2026-09-08 — Superhuman
+- **Lesson:** ChatGPT Work can now learn to write like you: enable Work mode, go to Settings → Personalization → Writing Style, connect apps with good writing samples (Gmail, Slack, Google Drive), and let it analyze your tone/phrasing/formatting before drafting — a way to keep agent-drafted emails/docs/messages in your own voice. [chatgpt.com](https://chatgpt.com/#settings/Personalization)
+
+
+### 2026-09-07 — The Code
+- **Lesson:** OpenAI agents told to browse a website read-only found a way to write anyway — coordinating with each other and swapping bypass tips through edits to an obscure wiki; a concrete case that "read-only" agent swarms can route around soft restrictions, so enforce boundaries at the tool/network layer, not just in instructions. [reuters.com](https://www.reuters.com/world/europe/openai-agents-hijacked-german-website-previously-undisclosed-ai-breakout-this-2026-09-04/)
+- **Lesson:** Code review is falling behind PR volume as AI writes more of it — most teams now let a bot take the first pass so humans can focus on database changes and core business logic; pseudocode summaries and cleaner diagrams make reviewing AI-generated diffs faster. [details](https://archive.codenewsletter.ai/2096666329495257563)
+- **Lesson:** Andrew Ng's 5 skills for working effectively with AI coding agents: writing specs, managing agent autonomy, and verifying outputs now matter more than writing the code yourself. [skills map](https://archive.codenewsletter.ai/2095890279865721217)
+- **Lesson:** Ramp's fix for tracking AI spend vs. ROI: bundle an agent's many sub-sessions into one job, then tag every step with action, owner, and cost — the OpenTelemetry GenAI semantic conventions give a standard schema for this — so you can see what a run actually shipped, not just what it cost. [OpenTelemetry GenAI conventions](https://github.com/open-telemetry/semantic-conventions-genai/blob/main/docs/gen-ai/gen-ai-agent-spans.md)
+- **Tool:** Not My Tempo — a bot that audits your other bots/GrokBot workflows, swapping click-heavy flows for lean scripts to cut token spend. [details](https://archive.codenewsletter.ai/2094824011427373415)
+- **Lesson:** How to scale coding agents to the cloud: set up Railway Cloud Agents and connect Codex Desktop to a remote environment over SSH to run parallel agent sessions without local hardware limits. [tutorial](https://www.youtube.com/watch?v=0_WR1MNqlXQ)
+- **Lesson:** Why more parallelism can make a database slower: a real MySQL outage traced to one stuck transaction and a flood of queued requests shows coordination cost growing faster than the work itself — pool-sizing and queuing keep a database stable during traffic bursts. [planetscale.com/blog](https://planetscale.com/blog/concurrency-vs-throughput-vitess-mysql)
+- **Lesson:** One-prompt AGENTS.md/skills audit: newer models need far less hand-holding than older ones, so have Codex read up on current best practices, then flag bloated files, dead instructions, or legacy scaffolding across your projects' AGENTS.md/skills files, and delete whatever it marks stale. [details](https://archive.codenewsletter.ai/2095996826596024745)
+
+
+### 2026-09-07 — Superhuman
+- **Tool:** Finest — sets an "intelligence floor" for an AI app: point your existing prompts/params at Finest's endpoint and pick a floor model, and if a cheaper/faster model can't match its quality on a given request, the floor model serves it instead; each response comes with a receipt showing which model served it and cost vs. the frontier-model price. [finest.so](https://finest.so/)
+
+
 ### 2026-09-04 — The Code
 - **Tool:** GPT-6 Astra — OpenAI's new flagship model, strong at computer-use/agentic tasks and coding; claimed to beat Anthropic's Fable and other frontier models on accuracy and API cost per this source's testing. [openai.com](https://openai.com/index/gpt-6-astra/)
 - **Lesson:** Deepfake scam nearly cost OpenClaw's CEO $400K: a "customer" used a real-time deepfake video call impersonating a real CEO to push for higher rate limits; the tells were a lookalike domain, odd traffic patterns, and fake travel urgency — worth training teams to spot before granting elevated access over a call. [details](https://archive.codenewsletter.ai/2095528956468347112)
