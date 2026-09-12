@@ -3,6 +3,12 @@ _read only if the project is JS/TS or frontend_
 
 > Entries older than 60 days live in `archive/javascript-YYYY-MM.md`. Coding agents should read only this file (plus `universal.md` if this is not already Universal).
 
+### 2026-09-11 — Sloth Bytes
+- **Tool:** React 19.3 — View Transitions graduated to stable; also ships Fragment Refs (refs on fragments via a new FragmentInstance object), a `browser` API to mark a component browser-only during server rendering, Trusted Types support (blocks DOM-based XSS), and `<title>` now renderable directly in Server Components. [react.dev/blog](https://react.dev/blog/2026/09/09/react-19-3)
+- **Tool:** Expo Modules 2.0 — replaces the old result-builder DSL for native modules with a plain `@ExpoModule` class and `@JS`-annotated methods/properties; sync/async follows Swift's own `async` keyword, 1.0/2.0 coexist so you migrate one function at a time, and the `@JS` path benchmarks 2.5–5.6x faster than 1.0 for sync calls. Live on iOS SDK 57 (experimental)/58 (beta); Android still in progress. [expo.dev/blog](https://expo.dev/blog/an-early-look-at-expo-modules-2-0)
+- **Tool:** drawably — hand-drawn-style UI component library with zero dependencies. [drawably.dev](https://www.drawably.dev/)
+- **Tool:** Extend UI — React components for viewing PDF, DOCX, XLSX, and CSV files inside your app. [extend.ai/ui](https://www.extend.ai/ui)
+
 ### 2026-09-09 — The Code
 - **Lesson:** Three ways to build agent-generated UIs (CopilotKit's Tyler Slaton): let agents create dynamic frontends, handle user input, and power interactive workflows like incident-triage apps, instead of only returning text. [tutorial](https://www.youtube.com/watch?v=mGyyTVk8Ggw)
 
