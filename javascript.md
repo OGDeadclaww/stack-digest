@@ -3,6 +3,21 @@ _read only if the project is JS/TS or frontend_
 
 > Entries older than 60 days live in `archive/javascript-YYYY-MM.md`. Coding agents should read only this file (plus `universal.md` if this is not already Universal).
 
+### 2026-09-24 — Sloth Bytes
+- **Tool:** Chrome 154 ships responsive iframes — an iframe can now size itself to fit its content: add `frame-sizing: content-height;` to the iframe's CSS on the parent page, opt in from the embedded page, and call `window.requestResize()` if content changes later — no more double scrollbars or manual `postMessage()` size measuring. Not supported in other browsers yet, so keep a fallback. [developer.chrome.com](https://developer.chrome.com/blog/responsive-iframes)
+- **Lesson:** "Blurry Before Beautiful" — a proposed built-in HTML attribute that shows a blurry preview of an image while it loads, no JavaScript library required; worth watching as a future zero-JS alternative to current placeholder techniques. [patrickbrosset.com](https://patrickbrosset.com/articles/2026-09-22-blurry-before-beautiful-image-previews-for-the-web/)
+- **Tool:** Remotion — make videos with React code. [github.com/remotion-dev/remotion](https://github.com/remotion-dev/remotion)
+
+
+### 2026-09-21 — The Code
+- **Tool:** Emil Kowalski's animation skill pack for Claude Code (12 skills) fixes the easing/timing/motion Claude Code usually gets wrong on its own: install with `npx skills@latest add emilkowalski/skills`, then `/prototype` a component and `/animate` it for proper easing/timing, iterate in plain English, and run `/prep-for-prod` to check performance/accessibility/mobile before shipping. [github.com/emilkowalski/skills](https://github.com/emilkowalski/skills)
+
+
+### 2026-09-18 — Sloth Bytes
+- **Tool:** Google's modern web guidance skills — a set of Claude/agent-ready skills covering modern web-development best practices (UX, performance) straight from the Chrome team. [developer.chrome.com](https://developer.chrome.com/docs/modern-web-guidance)
+- **Tool:** neat-annotations — hand-drawn-style CSS arrows and notes for docs/screenshots that need fun callouts, zero JS, one stylesheet. [neat-annotations.syabro.com](https://neat-annotations.syabro.com/)
+- **Tool:** pdfcn — customizable PDF-viewing/rendering components for React. [pdfcn.dev](https://www.pdfcn.dev/)
+
 ### 2026-09-11 — Sloth Bytes
 - **Tool:** React 19.3 — View Transitions graduated to stable; also ships Fragment Refs (refs on fragments via a new FragmentInstance object), a `browser` API to mark a component browser-only during server rendering, Trusted Types support (blocks DOM-based XSS), and `<title>` now renderable directly in Server Components. [react.dev/blog](https://react.dev/blog/2026/09/09/react-19-3)
 - **Tool:** Expo Modules 2.0 — replaces the old result-builder DSL for native modules with a plain `@ExpoModule` class and `@JS`-annotated methods/properties; sync/async follows Swift's own `async` keyword, 1.0/2.0 coexist so you migrate one function at a time, and the `@JS` path benchmarks 2.5–5.6x faster than 1.0 for sync calls. Live on iOS SDK 57 (experimental)/58 (beta); Android still in progress. [expo.dev/blog](https://expo.dev/blog/an-early-look-at-expo-modules-2-0)
