@@ -1,5 +1,11 @@
 # Universal — archive (2026-08)
 
+### 2026-08-28 — The Code
+- **Tool:** OpenWorker — open-source agent (Andrew Ng) that completes tasks on your laptop, now with built-in cybersecurity agents for vulnerability/dependency/cloud-config scanning. [github.com/andrewyng/openworker](https://github.com/andrewyng/openworker)
+- **Lesson:** 100+ companies (OpenAI, Anthropic, AWS, etc.) jointly warned organizations have only months to prepare for AI-enabled cyberattacks — patch known vulnerabilities and harden AI-generated code specifically, it's a bigger attack surface now.
+- **Lesson:** Analyzing large agent-swarm incident logs is still unreliable even with AI assistance (OpenAI's HuggingFace intrusion post-mortem) — don't fully trust automated incident analysis; keep a human in the loop for swarm oversight.
+
+
 ### 2026-08-27 — The Code
 - **Tool:** GLM-5.3-Flash — open multimodal model tuned for agentic/long-horizon coding, ~1/10 the price of comparable frontier models, near Claude Opus 4.8 on coding benchmarks. Via OpenRouter/Z.ai. [z.ai/blog](https://z.ai/blog/glm-5.3-flash)
 - **Lesson:** Andrew Ng's 6 pillars for AI engineering: LLM foundations, grounding models with data/context, building agentic systems (tool choice + bounds), evaluation-driven development (prove changes help, don't trust gut read), operating in production (monitoring/cost/quality), ML foundations.

@@ -3,6 +3,9 @@ _read only if the project is JS/TS or frontend_
 
 > Entries older than 60 days live in `archive/javascript-YYYY-MM.md`. Coding agents should read only this file (plus `universal.md` if this is not already Universal).
 
+### 2026-10-28 — The Code
+- **Tool:** Appllama Skills (3.4k★) — gives Claude Code, Cursor, Codex, and other agents a better eye for mobile UI: they study patterns from top-grossing apps, then build or improve Expo and React Native screens with better navigation, motion, accessibility, and simulator-tested polish. [github.com/Appllama/appllama-skills](https://github.com/Appllama/appllama-skills)
+
 ### 2026-10-23 — The Code
 - **Tool:** Reylo (Colin McDonnell, Zod creator) — import .sql files straight into TypeScript with full type inference, no ORM or codegen; checks queries against the real database schema, catches bad columns/parameters in the editor, and keeps agents from leaving stale types. Runs on TypeScript 7.1 content mappers (still beta). [github.com/colinhacks/reylo](https://github.com/colinhacks/reylo)
 

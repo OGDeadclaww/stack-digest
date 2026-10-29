@@ -3,6 +3,12 @@ _applies regardless of language — read no matter what you're building_
 
 > Entries older than 60 days live in `archive/universal-YYYY-MM.md`. Coding agents should read only this file (plus `universal.md` if this is not already Universal).
 
+### 2026-10-28 — The Code
+- **Tool:** LFM3 (Liquid AI) — six open-weight ~2B-parameter models covering text, vision, audio, and decision-making that can be fine-tuned on a single GPU to build a specialized on-device agent; the ~1 GB text model beats the larger Qwen3.5-9B on browser and business-app tasks (company claim), though agentic coding and general knowledge remain weak. [docs](https://docs.liquid.ai) / [use cases](https://www.liquid.ai/blog/lfm3)
+- **Lesson:** Make your program fix itself from its own logs (two-prompt setup from a former Meta L8): first ask Claude Code `Help me plan comprehensive logging such that we can replay what the user experienced, meaningful internal operations, and visible outcomes.`, then add a cron job (`crontab -e`) that runs a headless analysis every morning: `0 9 * * * cd ~/myapp && mkdir -p reports && claude -p "Analyze the logs in ./logs from the past 24h thoroughly. Identify broken behaviors, user friction, and inefficiencies. Propose improvements sorted by estimated impact." --allowedTools "Read,Grep,Glob" > reports/$(date +\%F).md` — a ranked fix list lands in `reports/` each day, with the agent limited to read-only tools. [full setup](https://archive.codenewsletter.ai/2114772499686998221)
+- **Lesson:** How to stop AI code reviews from spiraling (Anthropic cookbook): verify work before the PR, use a `REVIEW.md` to catch recurring issues, cap review rounds, switch later passes to diff-only review, and turn incidents into evals so the reviewer improves over time. [cookbook](https://archive.codenewsletter.ai/2114604912520921136)
+- **Lesson:** Learn Terraform even when AI writes the config (tutorial): covers providers, variables, state, and outputs, plus the mistakes AI-generated infrastructure can make if you don't understand what it is changing. [tutorial](https://www.youtube.com/watch?v=zj0D-vLbUkU)
+
 ### 2026-10-26 — The Code
 - **Tool:** Kimi K3.1 Pro (Moonshot) — 1M-token-context coding model scoring 65.7% on Terminal-Bench 4.0 (company claim), ahead of GPT-6 Astra and just behind Claude Opus 5.5, at $2/$10 per million input/output tokens; handles long-horizon coding from bug fixes to Unity/Godot games. Open weights due by Nov. 4. [quickstart](https://platform.kimi.ai/docs/guide/kimi-k3-1-pro-quickstart)
 - **Tool:** HumanLayer (12.5k★) — run Claude Code, Codex, OpenCode, and Pi agents across your own machines and manage all their tasks, sessions, plans, and reviews from one place; built for running several coding agents in parallel without losing track. [github.com/humanlayer/humanlayer](https://github.com/humanlayer/humanlayer)
@@ -621,9 +627,4 @@ _applies regardless of language — read no matter what you're building_
 
 ### 2026-08-31 — Superhuman
 - **Tool:** LLM Cliché Highlighter — browser tool that flags AI-writing tells ("it's not just X, it's Y", overuse of "delve") in any pasted text, useful for cleaning up agent-drafted docs/PRs before shipping. [llm-cliches.com](https://llm-cliches.com/)
-
-### 2026-08-28 — The Code
-- **Tool:** OpenWorker — open-source agent (Andrew Ng) that completes tasks on your laptop, now with built-in cybersecurity agents for vulnerability/dependency/cloud-config scanning. [github.com/andrewyng/openworker](https://github.com/andrewyng/openworker)
-- **Lesson:** 100+ companies (OpenAI, Anthropic, AWS, etc.) jointly warned organizations have only months to prepare for AI-enabled cyberattacks — patch known vulnerabilities and harden AI-generated code specifically, it's a bigger attack surface now.
-- **Lesson:** Analyzing large agent-swarm incident logs is still unreliable even with AI assistance (OpenAI's HuggingFace intrusion post-mortem) — don't fully trust automated incident analysis; keep a human in the loop for swarm oversight.
 
